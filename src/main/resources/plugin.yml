@@ -1,0 +1,11 @@
+name: CCVote
+author: bmlzootown
+version: 0.4.2
+main: ml.bmlzootown.CCVote
+depend: [Votifier]
+permissions:
+    ccvote.reload:
+        default: op
+commands:
+     ccvote:
+          description: See /ccvote for more info.
