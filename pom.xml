@@ -26,8 +26,9 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>votifier-repo</id>
-            <url>http://repo.turt2live.com/com/</url>
+            <id>ibj-public</id>
+            <name>Ichbinjoe Public Repository</name>
+            <url>https://nexus.ibj.io/repository/maven-public/</url>
         </repository>
     </repositories>
     <dependencies>
@@ -35,14 +36,20 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.13-R0.1-SNAPSHOT</version>
+            <version>1.13.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <!--Bukkit API-->
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.13-R0.1-SNAPSHOT</version>
+            <version>1.13.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vexsoftware</groupId>
+            <artifactId>nuvotifier-universal</artifactId>
+            <version>2.5.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
