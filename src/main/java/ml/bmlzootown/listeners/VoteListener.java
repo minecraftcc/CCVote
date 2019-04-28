@@ -8,11 +8,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
+
+import static ml.bmlzootown.config.VotedManager.datePattern;
 
 /**
  * Created by Brandon on 2/23/2016.
@@ -41,12 +46,27 @@ public class VoteListener implements Listener{
                    msg = ConfigManager.broadcastMessage().replace("<player>", player.getName());
                 }
             }
+
             if (ConfigManager.oncePer() > 0) {
+                if (debug) Bukkit.getLogger().log(Level.INFO, "[CCVote] once-per: " + ConfigManager.oncePer());
                 if (player != null) {
                     //if (!done.contains(player)) {
+                    String thenString = VotedManager.getVoted(player.getUniqueId());
+                    long seconds;
                     Date now = new Date();
-                    Date then = VotedManager.getVoted(player.getUniqueId());
-                    long seconds = (now.getTime() - then.getTime())/1000;
+                    if (thenString != null && !thenString.equalsIgnoreCase("")) {
+                        DateFormat format = new SimpleDateFormat(datePattern);
+                        Date then;
+                        try {
+                            then = format.parse(thenString);
+                            seconds = (now.getTime() - then.getTime())/1000;
+                        } catch (ParseException e) {
+                            seconds = Long.MAX_VALUE;
+                        }
+                    } else {
+                        seconds = Long.MAX_VALUE;
+                    }
+                    if (debug) Bukkit.getLogger().log(Level.INFO, "[CCVote] Seconds: " + seconds);
                     if (ConfigManager.oncePer() < seconds) {
                         if (debug) Bukkit.getLogger().log(Level.INFO, "[CCVote] Broadcast enabled (once), sending: " + ConfigManager.broadcastCmd() + " " + msg);
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "broadcast " + msg);

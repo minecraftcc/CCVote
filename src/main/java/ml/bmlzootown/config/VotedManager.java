@@ -16,8 +16,8 @@ import java.util.UUID;
 public class VotedManager {
     private static FileConfiguration config;
     private static Plugin pl = CCVote.plugin;
-    private static File vote = new File(pl.getDataFolder(), "voted");
-    private static String datePattern = "yyyy-MM-dd HH:mm:ss";
+    private static File vote = new File(pl.getDataFolder(), "voted.yml");
+    public static String datePattern = "yyyy-MM-dd HH:mm:ss";
 
     public static void createVoted() {
         try {
@@ -30,12 +30,13 @@ public class VotedManager {
     public static void loadVoted() {
         config = YamlConfiguration.loadConfiguration(vote);
     }
+
     public static void reloadVoted() {
         config = new YamlConfiguration();
         loadVoted();
     }
 
-    private static void saveVoted() {
+    public static void saveVoted() {
         try {
             config.save(vote);
         } catch (IOException e) {
@@ -50,13 +51,7 @@ public class VotedManager {
         saveVoted();
     }
 
-    public static Date getVoted(UUID uuid) {
-        String datestring = config.getString(uuid.toString());
-        DateFormat format = new SimpleDateFormat(datePattern);
-        try {
-            return format.parse(datestring);
-        } catch (ParseException e) {
-            return null;
-        }
+    public static String getVoted(UUID uuid) {
+        return config.getString(uuid.toString());
     }
 }

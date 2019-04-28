@@ -23,11 +23,14 @@ public class CCVote extends JavaPlugin{
             ConfigManager.setConfigDefaults();
         }
         // LastVote Init
-        File vote = new File(getDataFolder(), "voted");
+        File vote = new File(getDataFolder(), "voted.yml");
         if (!vote.exists()) {
             VotedManager.createVoted();
+            VotedManager.loadVoted();
+            VotedManager.saveVoted();
+        } else {
+            VotedManager.loadVoted();
         }
-        VotedManager.loadVoted();
         getServer().getPluginManager().registerEvents(new VoteListener(), this);
         getCommand("ccvote").setExecutor(new Commander());
     }
