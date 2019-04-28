@@ -2,12 +2,14 @@ package ml.bmlzootown.listeners;
 
 import com.vexsoftware.votifier.model.VotifierEvent;
 import ml.bmlzootown.config.ConfigManager;
+import ml.bmlzootown.config.VotedManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
@@ -19,7 +21,7 @@ public class VoteListener implements Listener{
     public static List<String> commands = new ArrayList<>();
     public static Set<String> sites;
     public static Set<String> worlds;
-    public static List<Player> done = new ArrayList<>();
+    //public static List<Player> done = new ArrayList<>();
 
     @EventHandler
     public void onVotifierEvent(VotifierEvent event) {
@@ -39,12 +41,17 @@ public class VoteListener implements Listener{
                    msg = ConfigManager.broadcastMessage().replace("<player>", player.getName());
                 }
             }
-            if (ConfigManager.oncePerRestart()) {
+            if (ConfigManager.oncePer() > 0) {
                 if (player != null) {
-                    if (!done.contains(player)) {
+                    //if (!done.contains(player)) {
+                    Date now = new Date();
+                    Date then = VotedManager.getVoted(player.getUniqueId());
+                    long seconds = (now.getTime() - then.getTime())/1000;
+                    if (ConfigManager.oncePer() < seconds) {
                         if (debug) Bukkit.getLogger().log(Level.INFO, "[CCVote] Broadcast enabled (once), sending: " + ConfigManager.broadcastCmd() + " " + msg);
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "broadcast " + msg);
-                        done.add(player);
+                        VotedManager.setVoted(player.getUniqueId(), now);
+                        //done.add(player);
                     }
                 }
             } else {

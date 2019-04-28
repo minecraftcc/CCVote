@@ -1,6 +1,7 @@
 package ml.bmlzootown.commands;
 
 import ml.bmlzootown.CCVote;
+import ml.bmlzootown.config.VotedManager;
 import ml.bmlzootown.listeners.VoteListener;
 import ml.bmlzootown.config.ConfigManager;
 import org.bukkit.ChatColor;
@@ -20,6 +21,7 @@ public class Commander implements CommandExecutor{
             if (sender.hasPermission("ccvote.reload")) {
                 if (args[0].equalsIgnoreCase("reload")) {
                     plugin.reloadConfig();
+                    VotedManager.reloadVoted();
                     VoteListener.commands = ConfigManager.getCommands();
                     sender.sendMessage(ChatColor.DARK_AQUA + "[CCVote] " + ChatColor.AQUA + "Config reloaded!");
                 } else {

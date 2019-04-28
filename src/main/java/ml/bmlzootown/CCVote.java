@@ -2,6 +2,7 @@ package ml.bmlzootown;
 
 import ml.bmlzootown.commands.Commander;
 import ml.bmlzootown.config.ConfigManager;
+import ml.bmlzootown.config.VotedManager;
 import ml.bmlzootown.listeners.VoteListener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,10 +17,17 @@ public class CCVote extends JavaPlugin{
 
     public void onEnable() {
         plugin = this;
+        // Config Init
         File file = new File(getDataFolder(), "config.yml");
         if (!file.exists()) {
             ConfigManager.setConfigDefaults();
         }
+        // LastVote Init
+        File vote = new File(getDataFolder(), "voted");
+        if (!vote.exists()) {
+            VotedManager.createVoted();
+        }
+        VotedManager.loadVoted();
         getServer().getPluginManager().registerEvents(new VoteListener(), this);
         getCommand("ccvote").setExecutor(new Commander());
     }
