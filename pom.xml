@@ -6,7 +6,7 @@
 
     <groupId>ml.bmlzootown</groupId>
     <artifactId>CCVote</artifactId>
-    <version>0.1</version>
+    <version>0.4.3</version>
 
     <build>
         <plugins>

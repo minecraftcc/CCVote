@@ -1,6 +1,6 @@
 name: CCVote
 author: bmlzootown
-version: 0.4.2
+version: 0.4.3
 main: ml.bmlzootown.CCVote
 depend: [Votifier]
 api-version: 1.13
