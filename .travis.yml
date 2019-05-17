@@ -1,0 +1,10 @@
+language: java
+before_deploy:
+  - export TARGET=$(ls target/CCVote-*.jar)
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITHUB_TOKEN
+  skip_cleanup: true
+  on:
+    tags: true

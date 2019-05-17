@@ -1,6 +1,6 @@
-name: CCVote
+name: ${project.name}
 author: bmlzootown
-version: 0.4.3
+version: ${project.version}
 main: ml.bmlzootown.CCVote
 depend: [Votifier]
 api-version: 1.13
