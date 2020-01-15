@@ -6,7 +6,7 @@
 
     <groupId>ml.bmlzootown</groupId>
     <artifactId>CCVote</artifactId>
-    <version>0.4.4</version>
+    <version>0.4.5</version>
     <name>CCVote</name>
 
     <build>
@@ -45,7 +45,7 @@
         </repository>
         <repository>
             <id>bintray-repo</id>
-            <url>https://dl.bintray.com/nuvotifier/maven/</url>
+            <url>https://dl.bintray.com/ichbinjoe/public/</url>
         </repository>
     </repositories>
     <dependencies>
@@ -53,20 +53,20 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.14.4-R0.1-SNAPSHOT</version>
+            <version>1.15.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <!--Bukkit API-->
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.14.4-R0.1-SNAPSHOT</version>
+            <version>1.15.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.vexsoftware</groupId>
             <artifactId>nuvotifier-universal</artifactId>
-            <version>2.3.4</version>
+            <version>2.6.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
