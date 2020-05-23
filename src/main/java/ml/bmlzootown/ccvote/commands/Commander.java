@@ -1,9 +1,9 @@
-package ml.bmlzootown.commands;
+package ml.bmlzootown.ccvote.commands;
 
-import ml.bmlzootown.CCVote;
-import ml.bmlzootown.config.VotedManager;
-import ml.bmlzootown.listeners.VoteListener;
-import ml.bmlzootown.config.ConfigManager;
+import ml.bmlzootown.ccvote.CCVote;
+import ml.bmlzootown.ccvote.config.VotedManager;
+import ml.bmlzootown.ccvote.listeners.VoteListener;
+import ml.bmlzootown.ccvote.config.ConfigManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

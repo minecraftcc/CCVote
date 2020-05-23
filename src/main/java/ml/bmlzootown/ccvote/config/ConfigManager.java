@@ -1,9 +1,9 @@
-package ml.bmlzootown.config;
+package ml.bmlzootown.ccvote.config;
 
 /**
  * Created by Brandon on 12/19/2015.
  */
-import ml.bmlzootown.CCVote;
+import ml.bmlzootown.ccvote.CCVote;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import java.util.Arrays;

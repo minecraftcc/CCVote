@@ -1,8 +1,8 @@
-package ml.bmlzootown.listeners;
+package ml.bmlzootown.ccvote.listeners;
 
 import com.vexsoftware.votifier.model.VotifierEvent;
-import ml.bmlzootown.config.ConfigManager;
-import ml.bmlzootown.config.VotedManager;
+import ml.bmlzootown.ccvote.config.ConfigManager;
+import ml.bmlzootown.ccvote.config.VotedManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 
-import static ml.bmlzootown.config.VotedManager.datePattern;
+import static ml.bmlzootown.ccvote.config.VotedManager.datePattern;
 
 /**
  * Created by Brandon on 2/23/2016.

@@ -1,6 +1,6 @@
-package ml.bmlzootown.config;
+package ml.bmlzootown.ccvote.config;
 
-import ml.bmlzootown.CCVote;
+import ml.bmlzootown.ccvote.CCVote;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -8,7 +8,6 @@ import org.bukkit.plugin.Plugin;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;

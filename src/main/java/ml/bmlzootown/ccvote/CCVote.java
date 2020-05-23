@@ -1,9 +1,9 @@
-package ml.bmlzootown;
+package ml.bmlzootown.ccvote;
 
-import ml.bmlzootown.commands.Commander;
-import ml.bmlzootown.config.ConfigManager;
-import ml.bmlzootown.config.VotedManager;
-import ml.bmlzootown.listeners.VoteListener;
+import ml.bmlzootown.ccvote.commands.Commander;
+import ml.bmlzootown.ccvote.config.ConfigManager;
+import ml.bmlzootown.ccvote.config.VotedManager;
+import ml.bmlzootown.ccvote.listeners.VoteListener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
