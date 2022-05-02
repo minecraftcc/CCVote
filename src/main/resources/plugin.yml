@@ -3,7 +3,7 @@ author: bmlzootown
 version: ${project.version}
 main: ml.bmlzootown.ccvote.CCVote
 depend: [Votifier]
-api-version: 1.15
+api-version: 1.18
 permissions:
     ccvote.reload:
         default: op

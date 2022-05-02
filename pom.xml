@@ -6,7 +6,7 @@
 
     <groupId>ml.bmlzootown</groupId>
     <artifactId>CCVote</artifactId>
-    <version>0.4.5</version>
+    <version>0.4.6</version>
     <name>CCVote</name>
 
     <build>
@@ -44,8 +44,8 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>bintray-repo</id>
-            <url>https://dl.bintray.com/ichbinjoe/public/</url>
+            <id>jitpack</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
     <dependencies>
@@ -53,21 +53,17 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.15.1-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--Bukkit API-->
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.15.1-R0.1-SNAPSHOT</version>
+            <version>1.18.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.vexsoftware</groupId>
-            <artifactId>nuvotifier-universal</artifactId>
-            <version>2.6.0</version>
-            <scope>provided</scope>
-        </dependency>
+            <groupId>com.github.NuVotifier.NuVotifier</groupId>
+            <artifactId>nuvotifier-bukkit</artifactId>
+            <version>2.7.2</version>
+        </dependency><dependency>
+        <groupId>com.github.NuVotifier.NuVotifier</groupId>
+        <artifactId>nuvotifier-api</artifactId>
+        <version>2.7.2</version>
+    </dependency>
     </dependencies>
 </project>
